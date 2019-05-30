@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="莫守成规">
 <meta property="og:description" content="概念 单例模式是常见的设计模式之一，分为饿汉式和懒汉式。 使用场景：在项目中，频繁使用的全局单一对象。  饿汉式 先创建好单例对象，后使用 优点：写法简单，在类加载时候创建对象，避免了线程同步的问题 缺点：如果后期开发未使用该单例对象，浪费内存  1234567891011121314public class SingleTon &amp;#123;	private static SingleTon in">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T08:37:21.773Z">
+<meta property="og:updated_time" content="2019-05-30T08:50:22.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之单例模式">
 <meta name="twitter:description" content="概念 单例模式是常见的设计模式之一，分为饿汉式和懒汉式。 使用场景：在项目中，频繁使用的全局单一对象。  饿汉式 先创建好单例对象，后使用 优点：写法简单，在类加载时候创建对象，避免了线程同步的问题 缺点：如果后期开发未使用该单例对象，浪费内存  1234567891011121314public class SingleTon &amp;#123;	private static SingleTon in">
@@ -158,7 +158,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#饿汉式"><span class="post-toc-number">2.</span> <span class="post-toc-text">饿汉式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#懒汉式"><span class="post-toc-number">3.</span> <span class="post-toc-text">懒汉式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程不安全的"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">线程不安全的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同步代码块"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">同步代码块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同步函数"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">同步函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利用静态内部类-推荐"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">利用静态内部类(推荐)</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#饿汉式"><span class="post-toc-number">2.</span> <span class="post-toc-text">饿汉式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#懒汉式"><span class="post-toc-number">3.</span> <span class="post-toc-text">懒汉式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程不安全的"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">线程不安全的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同步代码块"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">同步代码块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同步函数"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">同步函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利用静态内部类-推荐"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">利用静态内部类(推荐)</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -183,17 +183,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
+            <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
 <li>单例模式是常见的设计模式之一，分为饿汉式和懒汉式。</li>
 <li>使用场景：在项目中，频繁使用的全局单一对象。</li>
 </ul>
-<h1 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h1><ul>
+<h2 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h2><ul>
 <li>先创建好单例对象，后使用</li>
 <li>优点：写法简单，在类加载时候创建对象，避免了线程同步的问题</li>
 <li>缺点：如果后期开发未使用该单例对象，浪费内存</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleTon</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleTon instance = <span class="keyword">new</span> SingleTon();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//创建对象的过程可以使用静态代码块代替</span></span><br><span class="line">	<span class="comment">//	static &#123;</span></span><br><span class="line">	<span class="comment">//		instance = new SingleTon();</span></span><br><span class="line">	<span class="comment">//	&#125;</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleTon</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h1><ul>
+<h2 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h2><ul>
 <li>在第一使用时创建对象(延迟加载)</li>
 <li>优点：避免浪费内存</li>
 <li>缺点：有可能出现线程不安全的问题(多次创建对象)</li>
@@ -213,7 +213,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-05-30T08:37:21.773Z" itemprop="dateUpdated">2019-05-30 16:37:21</time>
+    最后更新时间：<time datetime="2019-05-30T08:50:22.385Z" itemprop="dateUpdated">2019-05-30 16:50:22</time>
 </span><br>
 
 
