@@ -222,15 +222,15 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        1.RPC解释
+        RPC解释
 RPC：Remote Procedure Call(远程过程调用)
 客户端获取服务端的服务(不同的计算机)
 
-2.RPC所需要的技术
+RPC所需要的技术
 反射技术：客户端给服务端发送代表接口名的字符串，服务端需要通过字符串解析出该字符串代表的接口的一切信息
 socket：客户端与服务端交互(传输信息)
 动态代理：服务端需要根据客户端的不同请求，返回不同的接口类型，客户端需要接受到不同的接口类型
-...
+代码实现...
     
 
         <a href="/2019/05/30/Java实现简单的RPC/" class="post-more waves-effect waves-button">
@@ -276,17 +276,17 @@ socket：客户端与服务端交互(传输信息)
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        1.概念
+        概念
 反射机制是在运行状态中： 对于任意一个类，都能够知道这个类的所有属性和方法。 对于任意一个对象，都能够调用它的任意一个方法和属性。
 
-2.提供的功能
+提供的功能
 在运行时判断任意一个对象所属的类
 在运行时构造任意一个类的对象
 在运行时判断任意一个类所具有的的成员变量和方法
 在运行时调用任意一个对象的方法
 生成动态代理
 
-3.获得反射入口的三种方式(获得类)1).Class.forName(全类...
+获得反射入口的三种方式(获得类)Class.forName(全类名)(推荐使用)1...
     
 
         <a href="/2019/05/30/Java反射的简单用法/" class="post-more waves-effect waves-button">
@@ -332,16 +332,16 @@ socket：客户端与服务端交互(传输信息)
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        1.概念
+        概念
 单例模式是常见的设计模式之一，分为饿汉式和懒汉式。
 使用场景：在项目中，频繁使用的全局单一对象。
 
-2.饿汉式
+饿汉式
 先创建好单例对象，后使用
 优点：写法简单，在类加载时候创建对象，避免了线程同步的问题
 缺点：如果后期开发未使用该单例对象，浪费内存
 
-1234567891011121314public class SingleTon &#123;	private static Singl...
+1234567891011121314public class SingleTon &#123;	private static SingleTon...
     
 
         <a href="/2019/05/30/设计模式之单例模式/" class="post-more waves-effect waves-button">
